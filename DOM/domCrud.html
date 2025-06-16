@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>simple todo app dom wala</h1>
+        <input id="inputfield" type="text">
+        <button class="btn">click me</button>
+        <div class="todoListsElem">
+            <!-- <p id="todoFirst"></p> -->
+        </div>
+    </div>
+    <script>
+        let inputElem = document.getElementById("inputfield")
+        let clickBtn = document.querySelector(".btn")
+        let todoElem = document.querySelector(".todoListsElem")
+        // let todoFirst = document.getElementById("todoFirst");
+        //* addEventListener('event',function)
+
+        const addTodo = ()=>{
+            //input me haamre pass value hoti hai
+            console.log(inputElem.value);
+            
+            // todoFirst.innerHTML = inputElem.value;
+            //problem with this code is ki agar ham value add krte hai toh usme next value update previous wale me hi hojata hai
+
+            //like apple and then mango add kiya toh apple replace hoke mango hojayega
+
+            //har ek click pr new paragraph create hoga
+            // we will use createElement(tagname)
+            let createParaElem = document.createElement("p")
+            createParaElem.textContent = inputElem.value;
+            console.log(createParaElem);
+            todoElem.append(createParaElem)
+            
+        }
+        
+        clickBtn.addEventListener("click",()=>{
+            addTodo();
+        })
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">DOM API</h1>
+    <ul class="list-of-nodes">
+        <li>1 node</li>
+        <li>2 node</li>
+        <li>3 node</li>
+        <!-- li node4 -->
+         <li>4 node</li>
+         <li style="display: none;">5node</li>
+    </ul>
+    <h1>DOM API 2</h1>
+    <input type="text" placeholder="">
+    <button>click</button>
+    <script>
+        let findElem = document.getElementById('heading');
+        const findElemByClass = document.getElementsByClassName("list-of-nodes")
+        // console.log(findElem.innerHTML);
+        // console.log(findElem.innerText);
+        // console.log(findElem.textContent);
+        // *dono me same answer ayega
+
+        // element ko target karne pr html collection milta hai agar nodes ko target karenege to nodes list milega 
+
+        const findClass = document.getElementsByClassName("list-of-nodes");
+        console.log(...findClass); //for loop bhi use krskte the and even spread operator will give ... values
+
+        for(let item of findClass ){
+            // 
+            console.log(item.innerHTML);
+
+
+            console.log(item.innerText);
+            //comment access krega textcontent
+            //text contnet me css hota hi nhi access
+            console.log(item.textContent);
+            
+        }
+        
+        
+        //jab bhi class elemnt use krnenge toh loop chlega data get krne ke liye
+
+
+        const val  = document.querySelector("li");
+        console.log(val);// sirf first node milega but mujhe chaiye saare li toh ill use queryselector all
+
+        const valForAllLis  = document.querySelectorAll("li");
+        console.log(valForAllLis)//node list milega
+        //now ill go with forEach loop to print values
+
+        const myValue = valForAllLis.forEach((curElem)=>{
+            console.log(curElem)
+        }) // getting the all the values of li
+
+        
+        
+
+    </script>
+</body>
+</html>

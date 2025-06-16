@@ -81,15 +81,24 @@
 
 // ? While Loop: A while loop in JavaScript is a control structure that repeatedly executes a block of code as long as a specified condition remains true. The loop continues iterating while the condition is true, and it terminates when the condition becomes false.
 
-// while (condition) {
-//   // Code to be executed as long as the condition is true
-// }
+while (condition) {
+  // Code to be executed as long as the condition is true
+}
 
 //* Simple while loop to count from 1 to 10 🧑‍💻
-
+let val = 1;
+while(val <= 10){
+    console.log(val);
+    val++;
+    
+}
 //! practice 🧑‍💻
 //? let's create a table of 5
-
+let val2 = 1;
+while(val2 <=10){
+    console.log(`5 X ${val2} = ${5 * val2}`);
+    val2++
+}
 //* ===============================
 //* Do-While Loop
 //* ===============================

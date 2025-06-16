@@ -227,7 +227,26 @@ const checkPan = (str)=>{
 console.log(checkPan("the quick brown fox jumps over the lazy dog"));
 
 //! simplest method to check if string is a pangram or not
+const pangramCheck = (str)=>{
+    let inpArr = str.toLowerCase().split("");const value = inpArr.filter((curElem)=>{
+         curElem.charCodeAt() >= "a".charCodeAt() && curElem.charCodeAt() <= "z".charCodeAt();
+    });
 
+    return [...new Set(value)].size === 26;
+}
 
+console.log(pangramCheck("The quick  brown fox jumps over the Lazy dog"));
 
+const checkVowels = (str)=>{
+    const vowels = 'aeiou';
+    for(let char of vowels){
+        if(!str.includes(char)){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(checkVowels("aeiou"));
+console.log(checkVowels("aou"));
 
